@@ -14,6 +14,7 @@ function Pages() {
         modules={[Pagination, Navigation]} // Menggunakan Pagination dan Navigation
         spaceBetween={10} // Jarak antar slide
         slidesPerView={1} // Menampilkan satu slide per tampilan
+        slidesPerGroup={1}
         loop={true} // Mengaktifkan looping
         pagination={{ clickable: true }} // Mengaktifkan pagination yang bisa diklik
         navigation // Mengaktifkan tombol navigasi
@@ -33,6 +34,9 @@ function Pages() {
         </SwiperSlide>
         <SwiperSlide className="bg-purple-500 text-white flex items-center justify-center h-full">
           <div className="text-xl">Slide 5</div>
+        </SwiperSlide>
+        <SwiperSlide className="bg-orange-500 text-white flex items-center justify-center h-full">
+          <div className="text-xl">Slide 6</div>
         </SwiperSlide>
       </Swiper>
     </div>
