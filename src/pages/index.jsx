@@ -1,6 +1,8 @@
 // src/pages/index.jsx
 import Home from './Home';
-import Checkout from './Checkout';
-import Store from './Store';
+import QuickSilver from './QuickSilver';
+import Volcom from './volcom/Volcom';
+import SpideBlitz from './SpideBlitz';
+import CaraOrder from './CaraOrder';
 
-export { Home, Checkout, Store };
+export { Home, QuickSilver, Volcom,SpideBlitz, CaraOrder };

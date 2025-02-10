@@ -16,6 +16,7 @@ import Nav from '../widget/Navbar';
 const HomeHorizontal = () => {
   return (
       <>
+        <div className='absolute -top-5'>
         <Swiper
            direction="vertical" // Mengatur arah swipe ke vertikal
            modules={[Pagination, Navigation]} // Menggunakan Pagination dan Navigation
@@ -37,6 +38,7 @@ const HomeHorizontal = () => {
           
           
         </Swiper>
+        </div>
         <Nav />
       </>
   )

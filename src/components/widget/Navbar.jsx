@@ -25,14 +25,14 @@ const Nav = () => {
     <div>     
       <div className={`absolute top-0 left-0 w-screen bg-white transition-transform duration-300 z-40 ${isOpen ? 'translate-y-0' : '-translate-y-full'}`}>
         <ul className="flex flex-col items-center">
-          <li className="p-4"><a href="#home">Home</a></li>
-          <li className="p-4"><a href="#about">About</a></li>
-          <li className="p-4"><a href="#services">Services</a></li>
-          <li className="p-4"><a href="#contact">Contact</a></li>
+          <li className="p-4"><Link to="/volcom">Volcom</Link></li>
+          <li className="p-4"><Link to="/quicksilver">Quick Silver</Link></li>
+          <li className="p-4"><Link to="/spiderblitz">Spider Blitz</Link></li>
+          <li className="p-4"><Link to="/caraorder">Cara order</Link></li>
         </ul>
       </div>
 
-      <div className='fixed inset-x-0 bottom-10 flex justify-around w-screen z-50'>
+      <div className='fixed inset-x-0 bottom-6 flex justify-around w-screen z-50'>
         <Link to="/"><CiHome className='fill-white h-[50px] w-[50px] bg-amber-400 p-2 rounded-full'/></Link>
         <button onClick={handleClick}><HiFingerPrint className='fill-white h-[70px] w-[70px]  bg-amber-400 p-2 rounded-full'/></button>
         <button onClick={waClick}><FaWhatsapp className='fill-white h-[50px] w-[50px] bg-amber-400 p-2 rounded-full'/></button>

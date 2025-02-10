@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Home, Checkout, Store } from "../pages"
-import HomeHorizontal from "../components/container/HomeHorizontal";
-import Pages from "../pages/Pages";
+import { Home, Volcom, QuickSilver, SpideBlitz, CaraOrder } from "../pages"
+
+
+
 
 
 const AppRouter = () => {
@@ -9,9 +10,10 @@ const AppRouter = () => {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />          {/* Halaman Home */}
-        <Route path="/store" element={<Store />} />    {/* Halaman Store */}
-        <Route path="/checkout" element={<Checkout />} /> {/* Halaman Checkout */}
-        <Route path="/test" element={<Pages />} /> {/* Halaman Test */}
+        <Route path="/volcom" element={<Volcom />} />    {/* Halaman Volcom */}
+        <Route path="/quicksilver" element={<QuickSilver />} /> {/* Halaman Quick silver */}
+        <Route path="/spiderblitz" element={<SpideBlitz />} /> {/* halaman Spider blitz */}
+        <Route path="/caraorder" element={<CaraOrder />} /> {/* halaman cara order */}
       </Routes>
     </Router>
   );
