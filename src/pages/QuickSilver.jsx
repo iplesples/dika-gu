@@ -30,16 +30,16 @@ export default function QuickSilver() {
         className="mySwiper"
       >
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+          <img src="/dc.svg" alt="logo"/>
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+        <img src="/dc.svg" alt="logo"/>
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+        <img src="/dc.svg" alt="logo"/>
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+        <img src="/dc.svg" alt="logo"/>
         </SwiperSlide>
       </Swiper>
     </>
