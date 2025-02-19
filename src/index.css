@@ -1,6 +1,19 @@
 @import "tailwindcss";
 
 @layer components {
+  .brand-container {
+    @apply !absolute !top-0 flex mt-10 w-full justify-around !z-10 h-[5vh];
+  }
+
+  .brand-bullet {
+    @apply text-lg text-white bg-transparent cursor-pointer transition-all font-thin;
+  }
+
+  .brand-active {
+    @apply !border-b-4
+     border-white border-dashed;
+  }
+
     .slide-card {
         display: flex;
         align-items: center;

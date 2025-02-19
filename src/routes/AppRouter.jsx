@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Home, Volcom, QuickSilver, SpideBlitz, CaraOrder } from "../pages"
+import { Home, Volcom, QuickSilver, SpideBlitz, CaraOrder, ProductList} from "../pages"
 
 
 
@@ -13,7 +13,7 @@ const AppRouter = () => {
         <Route path="/volcom" element={<Volcom />} />    {/* Halaman Volcom */}
         <Route path="/quicksilver" element={<QuickSilver />} /> {/* Halaman Quick silver */}
         <Route path="/spiderblitz" element={<SpideBlitz />} /> {/* halaman Spider blitz */}
-        <Route path="/caraorder" element={<CaraOrder />} /> {/* halaman cara order */}
+        <Route path="/productlist" element={<ProductList />} />
       </Routes>
     </Router>
   );

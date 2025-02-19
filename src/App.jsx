@@ -6,7 +6,7 @@ import ProductList from "./pages/ProductList";
 const App = () => {
   return (
     <div>
-    <ProductList />
+    <AppRouter />
     </div>
   );
 };
