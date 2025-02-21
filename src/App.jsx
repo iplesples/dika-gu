@@ -1,9 +1,6 @@
 import React from "react"
 import AppRouter from "./routes/AppRouter";
-import ProductList from "./pages/ProductList";
-
-
-const App = () => {
+  const App = () => {
   return (
     <div>
     <AppRouter />

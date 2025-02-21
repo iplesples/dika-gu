@@ -2,9 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import Nav from '../components/widget/Navbar';
-import { FaWhatsapp } from "react-icons/fa6";
-import { Link } from 'react-router-dom';
+
 
 import { Pagination } from 'swiper/modules';
 
@@ -17,25 +15,9 @@ const backgrounds = [
 ];
 
 
-const BelanjaSekarang = () => {
-  const waClick = () => {
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
-  };
-
-  return (
-
-    <div className='!fixed flex !z-50 bottom-0 mb-10 justify-center gap-8 h-[8vh]'>
-
-     <Link to="/productlist" className='bg-blur-sm text-slate-800 shadow-black shadow-md text-2xl p-4'>BELANJA SEKARANG</Link>
-     <button onClick={waClick}><FaWhatsapp className='fill-slate-800 shadow-black shadow-md h-full w-auto bg-slate-300 p-2 rounded-full'/></button>
-  </div>
-  )
-}
-
 
 const V = () => {
-
+  
 return (
     
   <Swiper
@@ -68,7 +50,7 @@ export default function Home() {
   };  
   return (
   
-    <>       
+    <>           
         <Swiper
           className="!relative h-screen w-screen !box-border"
           spaceBetween={0}
@@ -79,8 +61,7 @@ export default function Home() {
             <SwiperSlide key={menu.index}><V /></SwiperSlide>
           ))}
         </Swiper>  
-        <BelanjaSekarang />     
-    </>
+  </>
   
   );
 };

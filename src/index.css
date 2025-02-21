@@ -2,7 +2,7 @@
 
 @layer components {
   .brand-container {
-    @apply !absolute !top-0 flex mt-10 w-full justify-around !z-10 h-[5vh]  ;
+    @apply !absolute !top-12 flex w-full justify-around !z-10 h-[5vh]  ;
   }
 
   .brand-bullet {
@@ -10,7 +10,7 @@
   }
 
   .brand-active {
-    @apply !border-b-3
+    @apply !border-b-2
      border-white border-solid;
   }
 

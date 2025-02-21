@@ -1,45 +1,17 @@
-import React, { useState } from 'react';
-import { HiFingerPrint } from "react-icons/hi2";
-import { FaWhatsapp } from "react-icons/fa6";
-import { CiHome } from "react-icons/ci";
-import { Link } from 'react-router-dom';
+import {HomeButton, MenuButton, DashboardButton} from '../UI'
 
+const Navbar = () => {
 
-const Nav = () => {
-  //tombol menu
-  const [isOpen, setIsOpen] = useState(false);
-  const handleClick = () => {
-    setIsOpen(!isOpen);
-  };
-
-  //tombol wa
-  const phoneNumber = 6285775478560; // Ganti dengan nomor WhatsApp Anda
-  const message = 'Mas mau order sekarang bisa?'; // Pesan default
-
-  const waClick = () => {
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
-  };
-
+  const style = "backdrop-blur-sm text-neutral-100 w-auto h-full text-3xl rounded-full p-3 shadow-md shadow-black";
   return (
-    <div>     
-      <div className={`absolute top-0 left-0 w-screen bg-white transition-transform duration-300 z-40 ${isOpen ? 'translate-y-0' : '-translate-y-full'}`}>
-        <ul className="flex flex-col items-center">
-          <li className="p-4"><Link to="/volcom">Volcom</Link></li>
-          <li className="p-4"><Link to="/quicksilver">Quick Silver</Link></li>
-          <li className="p-4"><Link to="/spiderblitz">Spider Blitz</Link></li>
-          <li className="p-4"><Link to="/caraorder">Cara order</Link></li>
-        </ul>
+    <nav className="fixed bottom-8 left-0 right-0 z-50">
+      <div className="max-w-screen-xl mx-auto flex items-center justify-around">          
+          <HomeButton className={style} />
+          <MenuButton className="backdrop-blur-sm text-neutral-100 w-auto h-full text-5xl rounded-full p-3 shadow-black shadow-md animate-bounce" />       
+          <DashboardButton className={style}/>
       </div>
-
-      <div className='fixed inset-x-0 bottom-6 flex justify-around w-screen z-50'>
-        <Link to="/"><CiHome className='fill-white h-[50px] w-[50px] bg-amber-400 p-2 rounded-full'/></Link>
-        <button onClick={handleClick}><HiFingerPrint className='fill-white h-[70px] w-[70px]  bg-amber-400 p-2 rounded-full'/></button>
-        <button onClick={waClick}><FaWhatsapp className='fill-white h-[50px] w-[50px] bg-amber-400 p-2 rounded-full'/></button>
-    </div>
-
-    </div>
+    </nav>
   );
 };
 
-export default Nav;
+export default Navbar;

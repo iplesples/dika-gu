@@ -1,9 +1,9 @@
 // src/pages/index.jsx
 import Home from './Home';
-import QuickSilver from './QuickSilver';
-import Volcom from './volcom/Volcom';
-import SpideBlitz from './SpideBlitz';
-import CaraOrder from './CaraOrder';
+import UserDashboard from './UserDashboard';
 import ProductList from './ProductList';
+import Login from './Login';
+import Register from './Register';
+import ProductDetail from './ProductDetail';
 
-export { Home, QuickSilver, Volcom,SpideBlitz, CaraOrder, ProductList };
+export { Home, UserDashboard, ProductList, Login, Register, ProductDetail };

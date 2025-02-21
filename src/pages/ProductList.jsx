@@ -1,53 +1,45 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
-import CheckoutModal from "../components/container/CheckoutModal";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { useSearchParams, useNavigate } from 'react-router-dom';
+import ProductCard from '../components/ProductCard';
 
-
-const Card = ({product, onClick}) => {
-  return (
-    <div onClick={onClick}>
-        <div className='w-[50vw] h-[50vw] bg-gradient-to-t from-neutral-200 via-neutral-50 to-neutral-200'>
-        <img src={product.photoDisplay} alt="gambar" className='w-full h-full object-contain'/>
-        </div>
-        <div className='w-[50vw] h-[30.9vw] contain-layout p-3'>
-            <p className='text-neutral-600 '>Size: XS M L</p>
-            <h2 className='text-neutral-600 '>{product.title}</h2>
-            <h1 className='italic text-neutral-600'>{product.brand}</h1>
-            <p className='text-neutral-800 text-xl'>{product.price}</p>
-        </div>       
-    </div>
-  )
-}
-
-const ProductList = () => {
+function ProductList() {
   const [products, setProducts] = useState([]);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState(null);
-  const API_URL = "https://dika-server.vercel.app/api/products";
+  const [searchParams] = useSearchParams();
+  const brand = searchParams.get('brand');
+  const navigate = useNavigate();
+  
 
   useEffect(() => {
-    axios
-      .get(API_URL)
-      .then((res) => setProducts(res.data))
-      .catch((err) => console.error("Error fetching products:", err));
-  }, []);
+    axios.get('https://dika-server.vercel.app/api/products')
+      .then((response) => {
+        console.log('Semua produk:', response.data);
+        const allProducts = response.data;
+        const filteredProducts = brand 
+          ? allProducts.filter(product => product.brand.toLowerCase() === brand.toLowerCase())
+          : allProducts;
+        console.log('Produk terfilter:', filteredProducts);
+        setProducts(filteredProducts);
+      })
+      .catch((error) => {
+        console.error('Error fetching products', error);
+      });
+  }, [brand]);
+  
 
-  const handleCheckout = (product) => {
-    setSelectedProduct(product);
-    setIsModalOpen(true);
+  const handleProductClick = (id) => {
+    navigate(`/product/${id}`);
   };
 
   return (
-    <div>
-    <h1>happy shopping</h1>
-    <div className='grid grid-cols-2'>
-      {products.map((product) => (
-        <Card key={product._id} product={product} onClick={() => handleCheckout(product)}/>
-      ))}    
+    <div className="container w-screen p-6 box-border h-auto bg-[url(https://res.cloudinary.com/dt5d9j5vl/image/upload/v1740133048/background/q1n76xsxzd2igfcsn5nx.jpg)] bg-fixed">
+      <div className="grid grid-cols-1 mt-10 md:grid-cols-3 gap-4">
+        {products.map(product => (
+          <ProductCard key={product._id} product={product} onClick={() => handleProductClick(product._id)} />
+        ))}
+      </div>
     </div>
-    {isModalOpen && <CheckoutModal product={selectedProduct} onClose={() => setIsModalOpen(false)} />}
-    </div>
-  )
+  );
 }
 
 export default ProductList;
